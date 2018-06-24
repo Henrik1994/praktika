@@ -1,4 +1,4 @@
-<form (ngSubmit)="addemploy()" #f="ngForm">
+<form (ngSubmit)="addemploy()"  ngNativeValidate #f="ngForm">
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Create Employ</h3>
@@ -66,8 +66,23 @@
 
     <div class="form-group">
       <label for="name">Date of Bird</label>
-      <input type="date" Datepicker name="bird" class="form-control" [(ngModel)]="employ.bird"  />
+      <input type="date"  name="bird" class="form-control" [(ngModel)]="employ.bird"  />
   </div>
+
+  <div class="form-group">
+    <label for="name">Photo Path</label>
+    <input type="text"  name="photoPath" class="form-control" [(ngModel)]="employ.photoPath"  />
+  </div>
+
+  <div class="form-group">
+    <button type="button" (click)="togglePhoto()"  class="btn btn-primary"> {{ showPhoto? 'Hide': "Show"}} Photo </button>
+  </div>
+
+  <div class="form-group">
+    <img [src]="employ.photoPath" height="200" width="300" *ngIf="showPhoto">
+  </div>
+
+
 
     
     </div>

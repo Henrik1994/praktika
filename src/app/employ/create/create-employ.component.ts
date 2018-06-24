@@ -15,6 +15,7 @@ export class CreateEmployComponent implements OnInit {
     {id: 3, name: "Developer"},
     {id: 4, name: "Java"},
   ];
+  showPhoto = false;
 
   constructor() { }
 
@@ -25,6 +26,10 @@ export class CreateEmployComponent implements OnInit {
 
   addemploy(){
     console.log(this.employ);
+  }
+
+  togglePhoto() {
+    this.showPhoto = !this.showPhoto;
   }
 
 }
