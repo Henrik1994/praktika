@@ -1,0 +1,78 @@
+<form (ngSubmit)="addemploy()" #f="ngForm">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Create Employ</h3>
+  </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" [(ngModel)]="employ.name" />
+        </div>
+        <div class="form-group">
+            <label for="name">Email</label>
+            <input type="text" name="email" class="form-control" [(ngModel)]="employ.email" />
+        </div>
+        <div class="form-group">
+            <label for="name">Phone Number</label>
+            <input type="number" name="phone" class="form-control" [(ngModel)]="employ.phoneNumber" />
+        </div>
+
+        <div class="form-group">
+            <label for="name">Contact Preferance</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" value="email" name="contact" [(ngModel)]="employ.contact">
+              Email
+            </label>
+            <label class="radio-inline">
+                <input type="radio" value="phone" name="contact" [(ngModel)]="employ.contact">
+                Phone
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Gander</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" value="mail" name="gander" [(ngModel)]="employ.gander">
+              Mail
+            </label>
+            <label class="radio-inline">
+                <input type="radio" value="femail" name="gander" [(ngModel)]="employ.gander">
+                Femail
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Is Active</label>
+        <div class="form-control">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="active" [(ngModel)]="employ.active">
+            Is Active
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="select">Departament</label>
+        <select [(ngModel)]="employ.select" name="select"  class="form-control">
+          <option *ngFor="let cat of category" [value]="cat.id">
+            {{ cat.name }}
+          </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Date of Bird</label>
+      <input type="date" Datepicker name="bird" class="form-control" [(ngModel)]="employ.bird"  />
+  </div>
+
+    
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
